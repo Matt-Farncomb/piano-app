@@ -1,7 +1,9 @@
 //TODO:
-// Can currently save a new song when playing the keybord.
-// Howver, it still only has the one song. Need an option to choose file name.
-// It currentlyjust has tempName and therefore making new songs replaces the other.
+//Can currenlty make new songs that save and play on clicked
+//Songs have names, but they are collected from a bad location
+//Will igore that for now and concentrate on presentation
+//Make all the forms an everything look good. 
+//Also, have a stop button turn off ALL SOUND AS ANOTHER BUTTON EG MUTE
 
 
 //IMPORTANT
@@ -15,6 +17,8 @@ let pressure = "_mf";
 let songArr = [];
 let songDict = {};
 let keysPlayed = [];
+let newSongArr = [];
+let count = 0;
 
 function Song(name, notes, timings) {
   this.name = name;
@@ -194,10 +198,11 @@ $(document).ready(function () {
 
 	//used for the new button created with save
 	
-	function doScaledTimeout4(i, sound) {
-		var newTemp = tempName.timings;
-		var temp4 = tempName.timings[tempName.timings.length - i];
-		console.log(newTemp);
+	function doScaledTimeout4(i, sound, iter) {
+		var newTemp = newSongArr[iter].timings;
+		var temp4 = newSongArr[iter].timings[newSongArr[iter].timings.length - i];
+		console.log(temp4);
+		// console.log(newTemp);
 		// console.log(recordArr[i]);
 		// console.log(temp);
 		// console.log(totalArr);
@@ -205,7 +210,7 @@ $(document).ready(function () {
 	  	setTimeout(function() {
 	  	//fix for strange bug where I would start at zero than start counting down with recordArr.length
 	  	if (i > 0) {
-			i = tempName.notes.length - i;
+			i = newSongArr[iter].notes.length - i;
 		}
 		///
 	    playSound("music/new_keys/" + sound[i] + ".mp3");
@@ -374,40 +379,54 @@ $(document).ready(function () {
 
 	$("#save").click(function() {
 
-			var songTest = $("#song-name").val();
+			var newSongName = $("#song-name").val();
+			
 
 			// can't use dynamcially creted variable in code
 			//don't use the below
-			eval("var" + $("#song-name").val());
-			console.log(song);
+			// eval("var" + $("#song-name").val());
+			// console.log(song);
 
 			tempName = new Song();
 			tempName.name = "tempName";
 			tempName.notes = recordArr;
 			tempName.timings = totalArr;
 
-			console.log(tempName);
 
-			$("#song-list").append("<button class='playOtherSong' id=" + tempName.name + ">" + tempName.name + "</button><br><br>");
+			newSongArr.push(tempName);
+
+			console.log(newSongArr);
+
+			count++;
+
+			$("#song-list").append("<button class='playOtherSong" + count + "' id=" + tempName.name + ">" + newSongName + "</button><br><br>");
 
 			recordArr = [];
 			totalArr = [];
+			timeArr = [];
 		});
 
 
 
-		$(document).on('click','.playOtherSong', function() {
+		$(document).on('click','.playOtherSong1', function() {
 			// console.log("test");
 			// alert("test");
 			
-			for (var i = 0; i <= tempName.notes.length-1; i++) {
-		  		doScaledTimeout4(i, tempName.notes)
+			for (var i = 0; i <= newSongArr[0].notes.length-1; i++) {
+		  		doScaledTimeout4(i, newSongArr[0].notes, 0);
+		  		console.log(newSongArr[0]);
 			}
+		});
 
 
-
-
-
+		$(document).on('click','.playOtherSong2', function() {
+			// console.log("test");
+			// alert("test");
+			
+			for (var i = 0; i <= newSongArr[1].notes.length-1; i++) {
+		  		doScaledTimeout4(i, newSongArr[1].notes, 1);
+		  		console.log(newSongArr[1]);
+			}
 		});
 
 
