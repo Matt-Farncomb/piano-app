@@ -1,0 +1,117 @@
+
+#piano-case {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  width:750px;
+  height:300px;
+  border: 1px solid black;
+  margin:auto;
+  background-color: #17120c;
+}
+
+#button-cont {
+  display: flex;
+  justify-content:space-around;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+#play {
+  width:20%;
+  background-color: white;
+}
+
+#notes-guide{
+  color:white;
+}
+
+#record {
+  opacity: 1;
+  margin-top: 20px;
+  margin-left: 17px;
+  /*When this is checked, we will have the color and appeareance of button change to reflect that*/
+}
+
+#rec-button {
+  width:50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+#rec-button input[type=checkbox]:checked {
+  opacity: 0;
+}
+
+
+/*#rec-label {
+  color:red;
+  margin-right: 20px;
+}*/
+
+#piano-body { 
+  width:550px;
+  height:300px;
+  display:flex;
+  margin:auto;
+  /*border-style:inset;
+  border-width: 5px 5px 0px 5px;*/
+  color:red;
+}
+
+.white-key {
+  width:15%;
+  height:100%;
+  border: 1px solid black;
+  z-index:1;
+  background-color: #fffff0;
+}
+
+.white-key:hover {
+  background-color: #e3e3da;
+}
+
+.white-key:active {
+  height:95%;
+  background-color: #c5c5b7;
+}
+
+.active-white-key {
+  height:95%;
+  background-color: #c5c5b7;
+
+}
+
+.black-key {
+  width:10%;
+  height:75%;
+  border: 1px solid black;
+  background-color:black;
+  position:relative;
+  right:0px;
+}
+ 
+
+#black-keys-cont {
+  position:relative;
+  width:505px;
+  height:230px;
+  display:flex;
+  margin:auto;
+  justify-content:space-between;
+  position:relative;
+  bottom:300px;
+  left:40px;
+  z-index: 2;
+}
+
+.black-key {
+  background-color:black;
+  width:6%;
+  height:100%;
+  z-index: 2;
+}
+
+#b3, #b7, #b10, #b14 {
+   visibility: hidden;
+}
