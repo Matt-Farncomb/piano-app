@@ -1,3 +1,94 @@
+#everything {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*-----------------Song Creater-----------------*/
+
+/*this is the box that contains the media player and the song creater*/
+#admin-box {
+  display: flex;
+  flex-wrap: wrap;
+
+  width:300px;
+  height:146px;
+
+  background-color: lightblue;
+
+  text-align: center;
+}
+
+/*this is the box for the inoputs used to create the song and the button*/
+#creater-box {
+  display: flex;
+  flex-wrap:flex;
+
+  /*border:1px solid darkblue;*/
+  margin-bottom: 30px;
+}
+
+#name-creater-box {
+  width: 75%;
+}
+
+#song-name {
+  width: 100%;
+  height: 40.15%;
+}
+
+#create-song {
+  width: 100%;
+  height: 40.15%;
+}
+
+#create-song-button-box {
+  width: 25%;
+}
+
+#create-song-button {
+  height: 100%;
+}
+
+#song-name, #create-song, #song-to-play {
+  padding-left: 30px;
+}
+
+
+
+/*-----------------////////////-----------------*/
+
+
+/*-----------------Media Player-----------------*/
+#media-player {
+  display: flex;
+  flex-wrap:flex;
+
+  /*border:1px solid darkblue;*/
+}
+
+#song-to-play {
+  height: 89.5%;
+  width: 100%;
+}
+
+#play-song, #stop-song {
+  width: 50%;
+}
+
+#stop-song {
+  padding-right: 15px;
+}
+
+
+
+
+
+
+
+#outer-piano {
+  width: 48.2%;
+}
+
 
 #piano-case {
   padding-top: 60px;
@@ -5,7 +96,7 @@
   width:750px;
   height:300px;
   border: 1px solid black;
-  margin:auto;
+  /*margin:auto;*/
   background-color: #17120c;
 }
 
@@ -17,9 +108,18 @@
 }
 
 #play {
-  width:20%;
-  background-color: white;
+  background-color: green;
+  color: green;
+  border-radius: 50%;
+  width:50px;
+  height: 50px;
+  /*background-color: white;*/
 }
+
+.fa-play-circle {
+  color:black;
+}
+
 
 #notes-guide{
   color:white;

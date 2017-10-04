@@ -112,21 +112,7 @@ function recordKeys(keyId) {
 	}
 }
 
-$(document).ready(function () {
-	$("#rec-button").click(function() {
-		if (recording == true) {
-			recording = false;
-			$("#rec-button").html('REC');
-			console.log(recording);
 
-		}
-		else {
-			recording = true;
-			$("#rec-button").html('<i class="fa fa-stop" aria-hidden="true"></i>');
-			console.log(recording);
-		}
-	});
-});
 
 $(document).ready(function () {
 	$(".white-key").click(function() {
@@ -205,11 +191,7 @@ $(document).ready(function () {
 	}
 
 	//using this it has the doScaledTimeout have its own 'i because it checks the value of i at the time of execution and it hasn't changeds o each time the settimeout is called, it will have a unique unchanged i	
-	$("#play").click(function() {
-		for (var i = 0; i <= recordArr.length-1; i++) {
-		  doScaledTimeout(i);
-		}
-	});
+	
 
 	$("#create-song-button").click(function() {
 		tempArr = [];
@@ -242,7 +224,24 @@ $(document).ready(function () {
 			});
 		});
 
-	$("#save").click(function() {
+	// $("#save").click(function() {
+	// 		var newSongName = $("#song-name").val();
+	// 		tempName = new Song();
+	// 		tempName.name = "tempName";
+	// 		tempName.notes = recordArr;
+	// 		tempName.timings = totalArr;
+
+	// 		newSongArr.push(tempName);
+	// 		console.log(newSongArr);
+			
+	// 		$("#song-list").append("<button id='playOtherSong" + count + "' class='buttonSong'>" + newSongName + "</button><br><br>");
+	// 		recordArr = [];
+	// 		totalArr = [];
+	// 		timeArr = [];
+	// 		count++;
+	// 	});
+
+	function saveSong() {
 			var newSongName = $("#song-name").val();
 			tempName = new Song();
 			tempName.name = "tempName";
@@ -257,7 +256,7 @@ $(document).ready(function () {
 			totalArr = [];
 			timeArr = [];
 			count++;
-		});
+		};
 
 		$(document).on('click','.buttonSong', function() {	
 			let id = $(this).attr("id");
@@ -269,6 +268,34 @@ $(document).ready(function () {
 		 		console.log(newSongArr[idInt]);
 				}
 			});
+
+
+
+		$(document).ready(function () {
+			$("#rec-button").click(function() {
+				if (recording == true) {
+					recording = false;
+					$("#rec-button").html('REC');
+					console.log("not recording");
+					saveSong()
+
+				}
+				else {
+					recording = true;
+					$("#rec-button").html('<i class="fa fa-stop" aria-hidden="true"></i>');
+					console.log(recording);
+
+				}
+			});
+		});
+
+		$("#play").click(function() {
+		for (var i = 0; i <= recordArr.length-1; i++) {
+		  doScaledTimeout(i);
+		}
+	});
+
+
 	});
 
 	

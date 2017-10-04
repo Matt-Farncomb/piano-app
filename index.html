@@ -9,70 +9,81 @@
   <title></title>
 </head>
 <body>
-<div id="create-box">
-  Name<input type="text" id="song-name">
-  Notes<input type="text" id="create-song">
-  <button id="create-song-button">create song</button>
-</div>
-<div id="media-player">
-  Enter Song<input type="text" id="song-to-play">
-  <button id="play-song">Play Song</button>
-  <button id="stop-song">Stop</button>
-  Type the notes in the box. Type a "+" to add an extra beat.
-</div>
-<div id="piano-case">
-<div id="button-cont">
-  <button id="play">PLAY</button>
-  <button id="save">SAVE</button>
-  <button id="play-2">play 2</button>
-  <button id="rec-button">REC
-    <!-- <label id="rec-label"><input id="record" type="checkbox" name="recording"></input></label> -->
-  </button>
-<!-- KEYBOARD maybe HAS TO BE IN 3 ROWS OF 7 -->
-  
-</div>
-<!-- 
-<div id="notes-guide">-----------------------C---------------D---------------E--------F---------------G------------A-----------B--------</div>
- -->
-  <div id="piano-body">
-    <div id="C5" class="white-key"></div> 
-    <div id="D5" class="white-key"></div>
-    <div id="E5" class="white-key"></div> 
-    <div id="F5" class="white-key"></div>
-    <div id="G5" class="white-key"></div>
-    <div id="A5" class="white-key"></div>
-    <div id="B5" class="white-key"></div>
-    <!-- <div id="C6" class="white-key"></div>
-    <div id="D6" class="white-key"></div>
-    <div id="E6" class="white-key"></div>
-    <div id="F6" class="white-key"></div>
-    <div id="G6" class="white-key"></div>
-    <div id="A6" class="white-key"></div>
-    <div id="B6" class="white-key"></div> -->
-</div>
+<div id="everything">
+  <div id=admin-box>
+    <div id="creater-box">
+        <div id="name-creater-box">
+          <input type="text" id="song-name" placeholder="Enter Name">
+          <input type="text" id="create-song" placeholder="Enter Notes">
+        </div>
+        <div id="create-song-button-box">
+          <button id="create-song-button">create song</button>
+        </div>
+      </div>
+        
+   
+    <div id="media-player">
+      <input type="text" id="song-to-play" placeholder="Enter Song">
+      <button id="play-song">Play Song</button>
+      <button id="stop-song">Stop</button>
+      <!-- Type the notes in the box. Type a "+" to add an extra beat. -->
+    </div>
+  </div>
+  <div id="outer-piano">
+    <div id="piano-case">
+    <div id="button-cont">
+      <button id="play"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></button>
+      <!-- <button id="save">SAVE</button> -->
+      <!-- <button id="play-2">play 2</button> -->
+      <button id="rec-button">REC
+        <!-- <label id="rec-label"><input id="record" type="checkbox" name="recording"></input></label> -->
+      </button>
+    <!-- KEYBOARD maybe HAS TO BE IN 3 ROWS OF 7 -->
+      
+    </div>
+    <!-- 
+    <div id="notes-guide">-----------------------C---------------D---------------E--------F---------------G------------A-----------B--------</div>
+     -->
+      <div id="piano-body">
+        <div id="C5" class="white-key"></div> 
+        <div id="D5" class="white-key"></div>
+        <div id="E5" class="white-key"></div> 
+        <div id="F5" class="white-key"></div>
+        <div id="G5" class="white-key"></div>
+        <div id="A5" class="white-key"></div>
+        <div id="B5" class="white-key"></div>
+        <!-- <div id="C6" class="white-key"></div>
+        <div id="D6" class="white-key"></div>
+        <div id="E6" class="white-key"></div>
+        <div id="F6" class="white-key"></div>
+        <div id="G6" class="white-key"></div>
+        <div id="A6" class="white-key"></div>
+        <div id="B6" class="white-key"></div> -->
+    </div>
 
-  
+      
 
 
-<div id="black-keys-cont">
-      <div id="b1" class="black-key"></div>
-      <div id="b2" class="black-key"></div>
-      <div id="b3" class="black-key"></div>
-      <div id="b4" class="black-key"></div>
-      <div id="b5" class="black-key"></div>
-      <div id="b6" class="black-key"></div>
-      <div id="b7" class="black-key"></div>
-      <!-- <div id="b8" class="black-key"></div>
-      <div id="b9" class="black-key"></div>
-      <div id="b10" class="black-key"></div>
-      <div id="b11" class="black-key"></div>
-      <div id="b12" class="black-key"></div>
-      <div id="b13" class="black-key"></div>
-      <div id="b14" class="black-key"></div> -->
-  
+    <div id="black-keys-cont">
+          <div id="b1" class="black-key"></div>
+          <div id="b2" class="black-key"></div>
+          <div id="b3" class="black-key"></div>
+          <div id="b4" class="black-key"></div>
+          <div id="b5" class="black-key"></div>
+          <div id="b6" class="black-key"></div>
+          <div id="b7" class="black-key"></div>
+          <!-- <div id="b8" class="black-key"></div>
+          <div id="b9" class="black-key"></div>
+          <div id="b10" class="black-key"></div>
+          <div id="b11" class="black-key"></div>
+          <div id="b12" class="black-key"></div>
+          <div id="b13" class="black-key"></div>
+          <div id="b14" class="black-key"></div> -->
+      
+      </div>
+    </div>
   </div>
 </div>
-
 <div id = "song-list">
 </div>
 <!-- TODO:
